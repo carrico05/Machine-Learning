@@ -1,6 +1,0 @@
-
-
-
-!!! example "Exercício"
-
-    Utilizando

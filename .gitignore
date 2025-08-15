@@ -1,10 +1,5 @@
 site/
 env/
-.env/
 .cache/
 .vscode/
 target/
-volume/
-__pycache__/
-.DS_Store
-.env

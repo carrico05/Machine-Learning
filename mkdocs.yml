@@ -1,8 +1,8 @@
-site_name: Machine Learning
+site_name: Template de Entrega
 site_author: Sandmann, H.
-site_url: https://hsandmann.github.io/ml
-repo_url: https://github.com/hsandmann/ml
-repo_name: hsandmann/ml
+site_url: https://hsandmann.github.io/documentation.template
+repo_url: https://github.com/hsandmann/documentation.template
+repo_name: github/documentation.template
 
 theme:
   name: material
@@ -47,6 +47,7 @@ theme:
     - navigation.top
     - navigation.path
     - navigation.tracking
+    - navigation.expand
   icon:
     # logo: assets/images/devops
     admonition:
@@ -62,13 +63,12 @@ theme:
       bug: fontawesome/solid/robot
       example: fontawesome/solid/flask
       quote: fontawesome/solid/quote-left
-  logo: assets/images/logo.png
 
 markdown_extensions:
   - admonition
   - attr_list
   - md_in_html
-  - markdown_grid_tables:
+  - markdown_grid_tables
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.details
@@ -80,7 +80,6 @@ markdown_extensions:
       emoji_index: !!python/name:material.extensions.emoji.twemoji 
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.inlinehilite
-  - pymdownx.blocks.caption
   - pymdownx.snippets:
       url_download: true
   - pymdownx.superfences:
@@ -88,35 +87,36 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+        - name: python
+          class: python
+          validator: !!python/name:markdown_exec.validator
+          format: !!python/name:markdown_exec.formatter
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
-      custom_checkbox: true
+      custom_checkbox: true  
   - footnotes
-  - neoteroi.timeline
   - pymdownx.critic
   - pymdownx.caret
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.tilde
+  - pymdownx.blocks.caption
   - tables
-
-
+      
 plugins:
   - glightbox
   - git-revision-date-localized:
       enable_creation_date: true
   - git-authors
   - git-committers:
-      repository: insper/ann-dl
+      repository: hsandmann/hsandmann.github.com
       branch: main
-      token: !ENV MKDOCS_GIT_COMMITTERS_APIKEY
   - search
+  - badges
   - minify:
       minify_html: true
-  - badges
   - markdown-exec
-  - mkdocs-pdf
   - render_swagger:
       allow_arbitrary_locations : true
   - termynal:
@@ -125,37 +125,17 @@ plugins:
         - ">"
 
 extra_javascript:
-  - assets/javascripts/mathjax.js
+  - https://unpkg.com/mathjax/es5/tex-mml-chtml.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-
-extra_css:
-  - assets/stylesheets/neoteroi-mkdocs.min.css
-  - assets/stylesheets/neoteroi-timeline.css
-  - assets/stylesheets/extra.css
-
+  - https://fastly.jsdelivr.net/npm/jquery/dist/jquery.min.js
+  - https://fastly.jsdelivr.net/npm/echarts/dist/echarts.min.js
 
 nav:
-
-  - Aulas:
-    - 1. Concepts:
-      - 1.1. Machine Learning: ./classes/concepts/ml/ml.md
-      - 1.2. KDD: ./classes/concepts/kdd/kdd.md
-      - 1.3. Data: ./classes/concepts/data/data.md
-      - 1.4. Exercise: ./classes/concepts/exercise/exercise.md
-    - 2. Decision Tree: ./classes/decision_tree/decision_tree.md
-    - 3. Preprocessing: ./classes/preprocessing/preprocessing.md
-    - 4. KNN: ./classes/knn/knn.md
-    - 5. K-Means: ./classes/kmeans/kmeans.md
-    - 6. Evaluation Metrics: ./classes/metrics/metricas.md
-    - 7. Random Forest: ./classes/random_forest/random_forest.md
-    - 8. SVM: ./classes/svm/svm.md
-    - 9. Page Rank: ./classes/page_rank/page_rank.md
-    - 10. PySpark: ./classes/pyspark/pyspark.md
-
-  - Projetos:
-    - Projeto I: ./versions/2025.2/projects/1/projeto_i.md
-    - Projeto II: ./versions/2025.2/projects/2/projeto_ii.md
-
-  - Versões:
-    - 2025.2: ./versions/2025.2/2025.2.md
+  - Home: index.md
+  - Roteiros:
+    - Roteiro 1: ./roteiro1/main.md
+    - Roteiro 2: ./roteiro2/main.md
+    - Roteiro 3: ./roteiro3/main.md
+    - Roteiro 4: ./roteiro4/main.md
+  - Projeto: ./projeto/main.md
