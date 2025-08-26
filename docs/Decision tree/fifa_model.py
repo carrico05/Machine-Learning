@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, ConfusionMatrixDisplay
 
 # Carregar os dados
 df = pd.read_csv(r"C:\Users\guilherme.orlandi\Documents\GitHub\Exercicio01-Machine-Learning\docs\Decision tree\fifa_ranking.csv")
@@ -23,6 +23,7 @@ plt.hist(df["rank"], bins=30, color="skyblue", edgecolor="black")
 plt.title("Distribuição do Rank das Seleções")
 plt.xlabel("Rank")
 plt.ylabel("Frequência")
+plt.savefig("distribuicao_rank.png")
 plt.show()
 
 # evolução do ranking de algumas seleções
@@ -36,6 +37,7 @@ plt.title("Evolução do Ranking FIFA")
 plt.xlabel("Ano")
 plt.ylabel("Posição no Ranking")
 plt.legend()
+plt.savefig("evolucao_ranking.png")
 plt.show()
 
 # Pré-processamento
@@ -63,6 +65,11 @@ y_pred = model.predict(X_test)
 
 print("\nAcurácia:", accuracy_score(y_test, y_pred))
 print("\nMatriz de Confusão:")
-print(confusion_matrix(y_test, y_pred))
+cm = confusion_matrix(y_test, y_pred)
+disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=model.classes_)
+disp.plot(cmap="Blues")
+plt.title("Matriz de Confusão - Decision Tree")
+plt.savefig("matriz_confusao.png")
+plt.show()
 print("\nRelatório de Classificação:")
 print(classification_report(y_test, y_pred))

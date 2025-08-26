@@ -66,6 +66,12 @@ O treinamento foi realizado com o algoritmo **Decision Tree Classifier**, utiliz
 
 A avaliação foi feita com a base de teste. O desempenho alcançado foi uma acurácia em torno de 70%, mostrando que o modelo conseguiu identificar padrões gerais, especialmente ao diferenciar as seleções de elite das demais. A matriz de confusão evidenciou que as classes mais representadas (1–100) tiveram maior acerto, enquanto as classes menos frequentes apresentaram confusão maior. O relatório de classificação confirmou essa tendência, apontando precisão mais elevada para as seleções do topo do ranking.  
 
+A matriz de confusão abaixo ilustra os acertos e erros do modelo em cada faixa de ranking:
+
+![Matriz de Confusão](matriz_confusao.png)
+
+Observa-se que as classes mais representadas (1–100) tiveram maior acerto, enquanto as classes menos frequentes apresentaram mais confusão. O relatório de classificação confirmou essa tendência, apontando maior precisão para as seleções do topo do ranking.
+
 ## Questionário, Projeto ou Plano
 
 Não será necessário neste roteiro.
