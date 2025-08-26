@@ -5,7 +5,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
 # Carregar os dados
-df = pd.read_csv("fifa_ranking_2024.csv")
+df = pd.read_csv(r"C:\Users\guilherme.orlandi\Documents\GitHub\Exercicio01-Machine-Learning\docs\Decision tree\fifa_ranking.csv")
 
 # Exploração inicial
 print("Primeiras linhas do dataset:")
@@ -29,7 +29,7 @@ plt.show()
 teams_to_plot = ["Brazil", "Germany", "Argentina"]
 plt.figure(figsize=(10,6))
 for team in teams_to_plot:
-    team_data = df[df["team"] == team]
+    team_data = df[df["country_full"] == team]
     plt.plot(pd.to_datetime(team_data["rank_date"]), team_data["rank"], label=team)
 plt.gca().invert_yaxis() 
 plt.title("Evolução do Ranking FIFA")
@@ -47,7 +47,7 @@ X = df[["previous_points", "rank_change", "confederation"]].copy()
 # Transformar confederação em numérica
 X = pd.get_dummies(X, drop_first=True)
 
-# Target: faixas de ranking
+# faixas de ranking
 y = pd.cut(df["rank"], bins=[0,50,100,150,200,300],
            labels=[1,2,3,4,5])
 

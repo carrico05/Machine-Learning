@@ -1,6 +1,6 @@
 ## Objetivo
 
-Realizar uma análise exploratória e aplicar um modelo de árvore de decisão utilizando a base de dados **FIFA World Ranking (1993–2024)** disponível no Kaggle. O foco está em compreender o comportamento dos rankings das seleções ao longo do tempo e avaliar a capacidade de um modelo simples em prever a faixa de posição das seleções.
+Realizar uma análise exploratória e aplicar um modelo de árvore de decisão utilizando a base de dados **FIFA World Ranking (1993–2018)** disponível no Kaggle. O foco está em compreender o comportamento dos rankings das seleções ao longo do tempo e avaliar a capacidade de um modelo simples em prever a faixa de posição das seleções.
 
 
 ## Montagem do Roteiro
@@ -14,7 +14,7 @@ Foi utilizado o dataset contendo os rankings oficiais da FIFA de 1993 até 2024.
 
 Colunas principais:
 - **rank**: posição da seleção no ranking
-- **team**: nome da seleção
+- **country_full**: nome da seleção
 - **country_abrv**: abreviação de 3 letras
 - **total_points**: pontos acumulados
 - **previous_points**: pontos da edição anterior
@@ -64,9 +64,7 @@ O treinamento foi realizado com o algoritmo **Decision Tree Classifier**, utiliz
 
 ### Tarefa 5 - Avaliação do Modelo
 
-A avaliação foi feita com a base de teste. O desempenho alcançado foi uma acurácia em torno de 70%, mostrando que o modelo conseguiu identificar padrões gerais, especialmente ao diferenciar as seleções de elite das demais. A matriz de confusão evidenciou que as classes mais representadas (1–100) tiveram maior acerto, enquanto as classes menos frequentes apresentaram confusão maior. O relatório de classificação confirmou essa tendência, apontando precisão mais elevada para as seleções do topo do ranking.
-  
-
+A avaliação foi feita com a base de teste. O desempenho alcançado foi uma acurácia em torno de 70%, mostrando que o modelo conseguiu identificar padrões gerais, especialmente ao diferenciar as seleções de elite das demais. A matriz de confusão evidenciou que as classes mais representadas (1–100) tiveram maior acerto, enquanto as classes menos frequentes apresentaram confusão maior. O relatório de classificação confirmou essa tendência, apontando precisão mais elevada para as seleções do topo do ranking.  
 
 ## Questionário, Projeto ou Plano
 
