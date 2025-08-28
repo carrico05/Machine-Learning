@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, ConfusionMatrixDisplay
+from sklearn import tree
+import matplotlib.pyplot as plt
 
 # Carregar os dados
 df = pd.read_csv(r"C:\Users\guilherme.orlandi\Documents\GitHub\Exercicio01-Machine-Learning\docs\Decision tree\fifa_ranking.csv")
@@ -57,8 +59,19 @@ y = pd.cut(df["rank"], bins=[0,50,100,150,200,300],
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # Treinamento do modelo
-model = DecisionTreeClassifier(random_state=42)
+model = DecisionTreeClassifier(random_state=42, max_depth=3)
 model.fit(X_train, y_train)
+
+# Árvore de decisão 
+tree.plot_tree(model, 
+               feature_names=X.columns, 
+               class_names=[str(c) for c in model.classes_], 
+               filled=True)
+
+plt.title("Árvore de Decisão - Ranking FIFA")
+plt.savefig("arvore_decisao.png") # só para aparecer na atividade
+plt.savefig("arvore_decisao.pdf") # para vizualizar melhor a árvore de decisão
+plt.show()
 
 # Avaliação
 y_pred = model.predict(X_test)

@@ -13,14 +13,14 @@ Os pontos "tarefas" são os passos que foram seguidos para a realização do rot
 Foi utilizado o dataset contendo os rankings oficiais da FIFA de 1993 até 2024.
 
 Colunas principais:
-- **rank**: posição da seleção no ranking
-- **country_full**: nome da seleção
-- **country_abrv**: abreviação de 3 letras
-- **total_points**: pontos acumulados
-- **previous_points**: pontos da edição anterior
-- **rank_change**: variação de posição em relação ao ranking anterior
-- **confederation**: confederação (UEFA, CONMEBOL, CAF, AFC, CONCACAF, OFC)
-- **rank_date**: data do ranking
+ - **rank**: posição da seleção no ranking  
+ - **country_full**: nome da seleção
+ - **country_abrv**: abreviação de 3 letras
+ - **total_points**: pontos acumulados
+ - **previous_points**: pontos da edição anterior
+ - **rank_change**: variação de posição em relação ao ranking anterior
+ - **confederation**: confederação (UEFA, CONMEBOL, CAF, AFC, CONCACAF, OFC)
+ - **rank_date**: data do ranking
 
 Estatísticas descritivas:
 - `rank`: varia entre 1 e mais de 200, média próxima de 90
@@ -60,6 +60,17 @@ Separação em conjuntos:
 ### Tarefa 4 - Treinamento do Modelo
 
 O treinamento foi realizado com o algoritmo **Decision Tree Classifier**, utilizando como variáveis de entrada os pontos da edição anterior, a variação no ranking e a confederação de cada seleção. O modelo foi ajustado com a base de treino, sem alterações complexas de parâmetros, para manter a simplicidade do experimento.
+
+Para manter a árvore de decisão legível, foi definido um limite de profundidade de 5 níveis (`max_depth=5`).  
+Essa escolha não altera a lógica principal do modelo, mas reduz a complexidade visual, tornando mais fácil interpretar as regras criadas pela árvore.
+Para melhor vizualiza-la também inseri um arquivo em pdf para que fique nítido o que está escrito em cada parte da árvore.  
+
+A figura abaixo mostra a árvore de decisão gerada:
+
+![Árvore de Decisão](arvore_decisao.png)
+[Versão em PDF da Árvore](arvore_decisao.pdf)
+
+
 
 
 ### Tarefa 5 - Avaliação do Modelo
