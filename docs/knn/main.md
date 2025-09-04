@@ -88,7 +88,7 @@ knn.fit(X_train, y_train)
 
 ### Tarefa 5 - Avaliação do Modelo
 
-A avaliação foi feita com a base de teste. O desempenho alcançado apresentou uma acurácia em torno de 65–70%, mostrando que o modelo conseguiu identificar padrões gerais, especialmente ao diferenciar as seleções de elite das demais. A matriz de confusão evidenciou que as classes mais representadas (1–100) tiveram maior acerto, enquanto as classes menos frequentes apresentaram confusão maior. O relatório de classificação confirmou essa tendência, apontando precisão mais elevada para as seleções do topo do ranking.
+A avaliação foi feita com a base de teste. O desempenho alcançado apresentou uma acurácia de 77%, mostrando que o modelo conseguiu identificar padrões gerais, especialmente ao diferenciar as seleções de elite das demais. A matriz de confusão evidenciou que as classes mais representadas (1–100) tiveram maior acerto, enquanto as classes menos frequentes apresentaram confusão maior. O relatório de classificação confirmou essa tendência, apontando precisão mais elevada para as seleções do topo do ranking.
 
 A matriz de confusão abaixo ilustra os acertos e erros do modelo em cada faixa de ranking:
 
