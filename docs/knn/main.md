@@ -79,19 +79,14 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 ### Tarefa 4 - Treinamento do Modelo
 
-O treinamento foi realizado com o algoritmo **KNN**, utilizando como variáveis de entrada os pontos da edição anterior, a variação no ranking e a confederação de cada seleção. O modelo foi ajustado com a base de treino, sendo utilizado o valor de k=5 vizinhos, que é um parâmetro bastante comum em implementações iniciais.
+O treinamento foi realizado com o algoritmo **KNN**, utilizando como variáveis de entrada os pontos da edição anterior, a variação no ranking e a confederação de cada seleção. O modelo foi ajustado com a base de treino, sendo utilizado o valor de k = 5 vizinhos, que é um parâmetro bastante comum em implementações iniciais.
 
 ``` python exec="0"
 knn = KNeighborsClassifier(n_neighbors=5)
 knn.fit(X_train, y_train)
 ```
-Compreender a maneira como o modelo KNN separa as faixas de ranking é crucial. Para isso, foi criada uma visualização da decision boundary, usando somente as variáveis previous_points e rank_change, o que permite uma representação clara em duas dimensões.
 
-A figura exibe as áreas do gráfico que o modelo atribuiu a cada faixa de ranking. Os pontos coloridos são as amostras usadas para treino, e as áreas coloridas mostram a classe que o modelo previu para cada região. É notável como o KNN estabelece fronteiras que não são lineares, se ajustando de acordo com a distribuição dos dados.
-
-Essa visualização facilita a compreensão de como o KNN consegue identificar padrões específicos e como as variáveis numéricas afetam a classificação das seleções nas faixas de ranking.
-
-![Decision Boundary](knn_decision_boundary.png)
+O KNN estabelece fronteiras de decisão não lineares, adaptando-se à distribuição dos dados. Dessa forma, consegue capturar padrões específicos e refletir como as variáveis numéricas influenciam a classificação das seleções nas diferentes faixas de ranking.
 
 ### Tarefa 5 - Avaliação do Modelo
 
