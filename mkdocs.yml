@@ -138,7 +138,7 @@ nav:
     - KNN: ./knn/main.md
     - K-Means: ./k-means/main.md
     - Metrics and Evaluation: ./metrics/main.md
-    - Roteiro 2: ./roteiro2/main.md
+    - Randon Forest: ./random-forest/main.md
     - Roteiro 3: ./roteiro3/main.md
     - Roteiro 4: ./roteiro4/main.md
   - Projeto: ./projeto/main.md
