@@ -132,12 +132,18 @@ Assim tivemos como resultado que as diferenças ficaram abaixo 0.0001, indicando
 
 Foram selecionados os 10 nós com maior **PageRank**, sendo os maiores pertencentes, em geral, das seleções melhores posicionadas e que ocupam o topo da cadeia da sua confederação. Como cada confederação forma uma cadeia linear, o topo de cada cadeia recebe um alto número de contribuições acumuladas e um PageRank mais elevado.
 
+![Top 10 PageRank](pr_top10_manual.png)
+**Figura – Top 10 seleções pelo PageRank manual.**
+
 ## Tarefa 8 - Impacto do Fator de Amortecimento
 
 Os valores testados foram $d=0.5$, $d=0.85$, $d=0.99$, com isso, foi possível observar os seguintes comportamentos:
 **d=0.5** obteve um PageRank mais uniforme, uma diminuição nas diferenças entre as seleções e a importância distribuída de forma menos hierárquica.
 **d=0.85** teve um comportamento mais balanceado, diferenciou bem as seleções mais importantes sem exagerar e é o padrão mais utilizado na prática.
 **d=0.99** os PageRanks ficaram extremamente concentrados e as seleções no topo das confederações dominaram completamente.
+
+![Impacto do Fator de Amortecimento](pr_impacto_damping.png)
+**Figura – Comparação do PageRank para diferentes valores de d.**
 
 ## Discussões
 
