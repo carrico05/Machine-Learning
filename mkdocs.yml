@@ -139,6 +139,6 @@ nav:
     - K-Means: ./k-means/main.md
     - Metrics and Evaluation: ./metrics/main.md
     - Randon Forest: ./random-forest/main.md
-    - Roteiro 3: ./roteiro3/main.md
-    - Roteiro 4: ./roteiro4/main.md
+    - Page Rank: ./page-rank/main.md
+    - PySpark: ./pyspark/main.md
   - Projeto: ./projeto/main.md
